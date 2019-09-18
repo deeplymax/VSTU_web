@@ -19,11 +19,28 @@ h1 {
    text-align: center;
 }
 
-/* container styles */
+/* container */
 
 .container {
     width: 600px;
     margin: 0 auto;
+}
+
+/* input */
+
+.input {
+    border: 2px solid rgb(58, 58, 58);
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+}
+
+.input:hover {
+    border: 2px solid rgb(24, 24, 24);
+}
+
+.input:focus {
+    border: 2px solid rgb(84, 57, 185);
 }
 
 /* textarea */
@@ -31,17 +48,34 @@ h1 {
 textarea {
     width: 100%;
     height: 5rem;
-    border: 2px solid rgb(58, 58, 58);
-    border-radius: 5px;
-    outline: none;
-    padding: 10px;
     resize: none;
 }
 
-textarea:hover {
-    border: 2px solid rgb(24, 24, 24);
+/* sample */
+
+.answer {
+    width: 29%;
+    margin-left: 1%;
+    height: 2.2rem;
+    display: inline-block;
+    border: .125rem solid black;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: top;
+    line-height: 2rem;
+    color: #fff;
 }
 
-textarea:focus {
-    border: 2px solid rgb(84, 57, 185);
+.sample {
+    margin-bottom: 10px;
+}
+
+.sample input {
+    height: 2.2rem;
+    width: 70%;
+}
+
+.no-match {
+    border-color: rgb(150, 4, 4);
+    background-color: rgb(150, 4, 4);
 }
