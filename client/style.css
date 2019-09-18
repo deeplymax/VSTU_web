@@ -18,3 +18,9 @@ h1 {
    text-align: center;
 }
 
+/* container styles */
+.container {
+    width: 600px;
+    margin: 0 auto;
+}
+
