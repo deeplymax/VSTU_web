@@ -22,7 +22,8 @@ h1 {
 /* container */
 
 .container {
-    width: 600px;
+    min-width: 300px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -40,7 +41,7 @@ h1 {
 }
 
 .input:focus {
-    border: 2px solid rgb(84, 57, 185);
+    border: 2px solid rgb(26, 4, 104);
 }
 
 /* textarea */
@@ -54,25 +55,24 @@ textarea {
 /* sample */
 
 .answer {
-    width: 29%;
-    margin-left: 1%;
+    width: 10rem;
+    margin-left: .5rem;
     height: 2.2rem;
-    display: inline-block;
     border: .125rem solid black;
     border-radius: 5px;
     text-align: center;
-    vertical-align: top;
     line-height: 2rem;
     color: #fff;
 }
 
 .sample {
     margin-bottom: 10px;
+    display: flex;
 }
 
 .sample input {
     height: 2.2rem;
-    width: 70%;
+    flex-grow: 1;
 }
 
 .no-match {
