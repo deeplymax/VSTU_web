@@ -2,6 +2,7 @@
 
 * {
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 
 html {
@@ -19,8 +20,28 @@ h1 {
 }
 
 /* container styles */
+
 .container {
     width: 600px;
     margin: 0 auto;
 }
 
+/* textarea */
+
+textarea {
+    width: 100%;
+    height: 5rem;
+    border: 2px solid rgb(58, 58, 58);
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+    resize: none;
+}
+
+textarea:hover {
+    border: 2px solid rgb(24, 24, 24);
+}
+
+textarea:focus {
+    border: 2px solid rgb(84, 57, 185);
+}
