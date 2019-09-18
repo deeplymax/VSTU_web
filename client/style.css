@@ -34,6 +34,7 @@ h1 {
     border-radius: 5px;
     outline: none;
     padding: 5px;
+    font-size: 1em;
 }
 
 .input:hover {
