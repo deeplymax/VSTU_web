@@ -56,14 +56,17 @@ textarea {
 /* sample */
 
 .answer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 10rem;
     margin-left: .5rem;
     height: 2.2rem;
     border: .125rem solid black;
     border-radius: 5px;
-    text-align: center;
     line-height: 2rem;
     color: #fff;
+    
 }
 
 .sample {
