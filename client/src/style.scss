@@ -1,18 +1,6 @@
 @import 'styles/base';
 
-h1 {
-   font-size: 5rem;  
-   font-weight: 300;
-   text-align: center;
-}
-
-/* container */
-
-.container {
-    min-width: 300px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+@import 'styles/container';
 
 @import 'styles/inputs';
 
