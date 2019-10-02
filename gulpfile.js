@@ -1,5 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const webpack = require('webpack');
+const path = require('path');
 
 sass.compiler = require('node-sass');
 
@@ -11,21 +13,22 @@ gulp.task('build-css', () => {
 
 gulp.task('build-js', (done) => {
     webpack({
-        entry: './client/src/index.js',
+        entry: path.resolve(__dirname,'client/src/index.js'),
         output: {
             filename: 'main.js',
-            path: path.resolve(__dirname, 'client/dist'),
+            path: path.resolve(__dirname, 'client/dest'),
         },
+        devtool: 'inline-source-map',
     }, (err, stats) => {
-        if(err) {
-            console.error(err || 'Some error');
+        if (err || stats.hasErrors()) {
+            console.error(stats);
             return;
         }
         done();
-    });  
-});
+    })
+})
 
-gulp.task('default', gulp.series('build-css', () => {
-    gulp.watch('./client/src/**/*.scss', 
-    gulp.series('build-css'));
-}));
+gulp.task('default', gulp.series('build-css', 'build-js', () => {
+    gulp.watch('./client/src/**/*.scss', gulp.series('build-css'));
+    gulp.watch('./client/src/**/*.js', gulp.series('build-js'));
+}))

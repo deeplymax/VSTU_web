@@ -1,13 +1,13 @@
-//When window load
-document.addEventListener('DOMContentLoaded', () => {
-    let regexp = document.querySelector('#regexp');
-    
-    regexp.addEventListener('input', (event) => {
-        console.log(event.target.value);
-    })
+import { getDataFromServer } from "./js-modules/get-data"
+import { createSamples } from "./js-modules/sample"
 
-    document.querySelector('.samples').oninput = event => {
-        console.log(event.target.value);        
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const regexp = document.querySelector('#regexp');
+    const description = document.querySelector('#description');
+    getDataFromServer('../db.json', (db) => {
+        regexp.value = db.regexp;
+        description.value = db.description;
+        createSamples(db.samples);
+    });
 });
 
