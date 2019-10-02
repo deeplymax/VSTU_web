@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build-css": "sass --watch client/src/test_sass.scss client/dest/test.css"
   },
   "keywords": [],
-  "author": "",
+  "author": "Kirienko Maxim",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^4.0.2",
