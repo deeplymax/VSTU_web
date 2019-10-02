@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
+    "dev": "gulp",
     "build-css": "sass --watch client/src/test_sass.scss client/dest/test.css"
   },
   "keywords": [],
