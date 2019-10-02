@@ -10,6 +10,6 @@ gulp.task('build-css', () => {
 });
 
 gulp.task('default', gulp.series('build-css', () => {
-    gulp.watch('./client/src/style.scss', 
+    gulp.watch('./client/src/**/*.scss', 
     gulp.series('build-css'));
 })); 
