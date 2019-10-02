@@ -1,5 +1,4 @@
 @import 'styles/base';
-@import 'styles/inputs';
 
 h1 {
    font-size: 5rem;  
@@ -15,31 +14,6 @@ h1 {
     margin: 0 auto;
 }
 
-/* sample */
+@import 'styles/inputs';
 
-.answer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 10rem;
-    margin-left: .5rem;
-    height: 2.2rem;
-    border: .125rem solid black;
-    border-radius: 5px;
-    line-height: 2rem;
-    color: #fff;   
-}
-
-.sample {
-    margin-bottom: 10px;
-    display: flex;
-    input {
-        height: 2.2rem;
-        flex-grow: 1;
-    }
-}
-
-.no-match {
-    border-color: rgb(150, 4, 4);
-    background-color: rgb(150, 4, 4);
-}
+@import 'styles/sample';
