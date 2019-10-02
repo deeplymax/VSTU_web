@@ -9,7 +9,7 @@ gulp.task('build-css', () => {
     .pipe(gulp.dest('./client/dest',{ sourcemaps:true }))
 });
 
-gulp.task('sass:watch', () => {
+gulp.task('default', () => {
     gulp.watch('./client/src/test_sass.scss', 
     gulp.parallel('build-css'));
 });
