@@ -1,5 +1,6 @@
 import { getDataFromServer } from "./js-modules/get-data"
 import { createSamples } from "./js-modules/sample"
+import 'whatwg-fetch'
 
 document.addEventListener('DOMContentLoaded', () => {
     const regexp = document.querySelector('#regexp');
