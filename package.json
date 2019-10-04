@@ -12,6 +12,8 @@
   "author": "Kirienko Maxim",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "babel-loader": "^8.0.6",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.12.0",
