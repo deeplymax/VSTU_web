@@ -11,4 +11,3 @@ document.addEventListener('DOMContentLoaded', () => {
         createSamples(db.samples);
     });
 });
-
