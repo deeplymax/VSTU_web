@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "gulp",
-    "build-css": "sass --watch client/src/test_sass.scss client/dest/test.css"
+    "build-css": "sass --watch client/src/test_sass.scss client/dest/test.css",
+    "server": "nodemon --ignore client/ --ignore node_modules/ --inspect ./server.js"
   },
   "keywords": [],
   "author": "Kirienko Maxim",
@@ -21,6 +22,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.12.0",
+    "nodemon": "^1.19.4",
     "sass": "^1.23.0",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9",
