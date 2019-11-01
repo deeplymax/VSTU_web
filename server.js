@@ -36,7 +36,9 @@ const server = http.createServer((request, response) => {
             }
         }
         else if (request.method === 'POST') {
-
+            if(parsedUrl.pathname === '/api/newtask') {
+                createNewTask(request, response, parsedUrl);
+            }
         }
     }
 });
@@ -67,6 +69,20 @@ function getMimeType(filename) {
     }
     const ext = filename.match(/.*\.(.*)$/)[1]
     return exts[ext] || 'text/plane';
+}
+
+function createNewTask(request, response, parsedUrl) {
+    let data = '';
+    request.on('data', chunk => {
+        data += chunk.toString();
+    });
+    request.on('end', () => {
+        response.setHeader('Content-Type', 'application/json');
+        db.push(JSON.parse(data))
+        fs.writeFile('./db.json', JSON.stringify(db), () => {
+            response.end(JSON.stringify({status: "success"}, null, 2))
+        })
+    });
 }
 
 server.listen(port, () => {
