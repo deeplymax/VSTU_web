@@ -1,11 +1,24 @@
-{
-    "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores consectetur",
-    "regexp": "a+b*",
-    "samples" : [
-        "aaaaaaaab",
-        "abbbbbbb",
-        "a",
-        "hello",
-        "bbbbb"
-    ]
-}
+[
+    {
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores consectetur",
+        "regexp": "a+b*",
+        "samples": [
+            "aaaaaaaab",
+            "abbbbbbb",
+            "a",
+            "hello",
+            "bbbbb"
+        ]
+    },
+    {
+        "description": "Second desc",
+        "regexp": "**********",
+        "samples": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+        ]
+    }
+]
