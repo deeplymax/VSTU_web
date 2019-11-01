@@ -23,6 +23,7 @@ const server = http.createServer((request, response) => {
                         tasksResponse = db[idTask]
                     }
                     else {
+                        response.statusCode = 404;
                         tasksResponse = {error: 'Wrong id'}
                     }
                 }
