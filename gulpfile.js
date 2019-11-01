@@ -2,13 +2,20 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const webpack = require('webpack');
 const path = require('path');
-
 const autoprefixer = require('autoprefixer')
 const postcss = require('gulp-postcss')
-
 const webpackConfig = require('./webpack.config');
+const browserSync = require('browser-sync').create();
 
 sass.compiler = require('node-sass');
+
+gulp.task('browser-sync', function(done) {
+    browserSync.init({
+        proxy: "localhost:3000",
+        port: 4000
+    });
+    done();
+});
 
 gulp.task('build-css', () => {
     return gulp.src('./client/src/style.scss', { sourcemaps:true })
@@ -26,7 +33,8 @@ gulp.task('build-js', (done) => {
     })
 })
 
-gulp.task('default', gulp.series('build-css', 'build-js', () => {
+gulp.task('default', gulp.series('browser-sync', 'build-css', 'build-js', () => {
     gulp.watch('./client/src/**/*.scss', gulp.series('build-css'));
     gulp.watch('./client/src/**/*.js', gulp.series('build-js'));
+    gulp.watch('./client/src/**/*.*').on('change', browserSync.reload);
 }))
