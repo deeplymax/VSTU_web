@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const idTask = loc ? loc[1] : 0;
     console.log(idTask);
     getDataFromServer(`/api/tasks/${idTask}`, (db) => {
+        if (db.error) {
+            alert(db.error);
+        }
         regexp.value = db.regexp;
         description.value = db.description;
         createSamples(db.samples);
