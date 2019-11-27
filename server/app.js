@@ -20,24 +20,29 @@ app.use(express.static('./client/'));
 app.use('/tasks/:id', express.static('./client/'))
 app.use(express.json());
 
-
+app.get('/api/tasks/all', (req, res, next) => {
+    Task.findAll()
+        .then(tasks => {
+            res.json(tasks);
+        })
+})
 app.get('/api/tasks/:id', (req, res, next) => {
     let idTask = req.params.id;
     if (taskReady) {
         if (idTask === '0') {
             Task.findOne()
-            .then(task => {
-                if (task === null) {
-                    throw new Error('Wrong id');
-                }
-                res.json(task);
-            })
-            .catch(error => {
-                res.json({error: 'empty DB'})
-            })
+                .then(task => {
+                    if (task === null) {
+                        throw new Error('Wrong id');
+                    }
+                    res.json(task);
+                })
+                .catch(error => {
+                    res.json({ error: 'Empty DB' })
+                })
         }
         else {
-            Task.findOne({ where: { id: idTask} })
+            Task.findOne({ where: { id: idTask } })
                 .then(task => {
                     if (task === null) {
                         throw new Error('Wrong id');
