@@ -1,4 +1,5 @@
 const template = `
+    <a class="back" href="../../">Вернуться к списку</a>
     <h3>Description</h3>
     <textarea class="input" id="description"></textarea>
 
