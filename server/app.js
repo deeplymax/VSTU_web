@@ -22,18 +22,32 @@ app.use(express.json());
 
 
 app.get('/api/tasks/:id', (req, res, next) => {
+    let idTask = req.params.id;
     if (taskReady) {
-        Task.findOne({ where: { id: req.params.id } })
+        if (idTask === '0') {
+            Task.findOne()
             .then(task => {
                 if (task === null) {
                     throw new Error('Wrong id');
                 }
-                console.log(task);
                 res.json(task);
             })
             .catch(error => {
-                res.json({ error: 'Wrong id' });
+                res.json({error: 'empty DB'})
             })
+        }
+        else {
+            Task.findOne({ where: { id: idTask} })
+                .then(task => {
+                    if (task === null) {
+                        throw new Error('Wrong id');
+                    }
+                    res.json(task);
+                })
+                .catch(error => {
+                    res.json({ error: 'Wrong id' });
+                })
+        }
     }
 });
 
