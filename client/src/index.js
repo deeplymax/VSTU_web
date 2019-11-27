@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const regexp = document.querySelector('#regexp');
     const description = document.querySelector('#description');
     const pathname = window.location.pathname;
-    const idTask = /\/tasks\/(\d+)/.exec(pathname)[1] || 0;
+    const loc = /\/tasks\/(\d+)/.exec(pathname);
+    const idTask = loc ? loc[1] : 0;
     console.log(idTask);
     getDataFromServer(`/api/tasks/${idTask}`, (db) => {
         regexp.value = db.regexp;
