@@ -5,7 +5,10 @@ import 'whatwg-fetch'
 document.addEventListener('DOMContentLoaded', () => {
     const regexp = document.querySelector('#regexp');
     const description = document.querySelector('#description');
-    getDataFromServer('/api/tasks/1', (db) => {
+    const pathname = window.location.pathname;
+    const idTask = /\/tasks\/(\d+)/.exec(pathname)[1] || 0;
+    console.log(idTask);
+    getDataFromServer(`/api/tasks/${idTask}`, (db) => {
         regexp.value = db.regexp;
         description.value = db.description;
         createSamples(db.samples);

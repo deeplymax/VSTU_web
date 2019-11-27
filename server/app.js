@@ -5,6 +5,7 @@ const db = require('.././db.json');
 const fs = require('fs');
 
 app.use(express.static('./client/'));
+app.use('/tasks/:id', express.static('./client/'))
 app.use(express.json());
 
 app.get('/api/tasks/:id', (req, res, next) => {
