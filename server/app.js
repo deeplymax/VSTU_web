@@ -19,9 +19,7 @@ app.get('/api/tasks/:id', (req, res, next) => {
 });
 
 app.post('/api/newtask', (req, res, next) => {
-    res.setHeader('content-type', 'application/json');
     createNewTask(req, res);
-    res.json(req.body);
 });
 
 function createNewTask(req, res) {
